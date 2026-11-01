@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Прописи">
+<title>Ukrainian Handwriting Practice</title>
+<style>
+:root { --paper: #fbfaf7; --margin: #e4e2dc; --rule: #9c9a94; --slant: #cfccc4; --guide: #a9b4c2; --model: #1e2430; --ink: #1b4fa0; --accent: #c2502b; --icon-bg: #efede8; --icon-edge: #cfccc4; --good: #2f7d4f; --ok: #b07a12; --poor: #b23a3a; --chrome: #f3f2ee; --text: #1e2430; --muted: #6b6f78; }
+@media (prefers-color-scheme: dark) { :root { --paper: #1c1e22; --margin: #2a2d33; --rule: #5d6068; --slant: #34373e; --guide: #4e5b6d; --model: #e8e6e1; --ink: #7fb0ff; --accent: #e07a55; --icon-bg: #25282e; --icon-edge: #3a3d44; --good: #5bbd84; --ok: #e0b04a; --poor: #e07070; --chrome: #16181b; --text: #e8e6e1; --muted: #9a9ea6; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--chrome); color: var(--text); font-family: system-ui, -apple-system, sans-serif; -webkit-user-select: none; user-select: none; }
+header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 12px; padding: 10px 16px; padding-top: max(10px, env(safe-area-inset-top)); background: var(--chrome); border-bottom: 1px solid var(--margin); }
+header .titles { flex: 1; min-width: 0; }
+h1 { margin: 0; font: 600 20px/1.2 Georgia, 'Times New Roman', serif; }
+#lesson-subtitle { font-size: 13px; color: var(--muted); }
+button, label.toggle { font: inherit; font-size: 14px; color: var(--text); background: transparent; border: 1px solid var(--margin); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+label.toggle { display: flex; align-items: center; gap: 6px; }
+main { padding: 0 16px 40px; }
+#page { position: relative; margin: 0 auto; max-width: 1320px; }
+#page canvas { position: absolute; left: 0; top: 0; }
+#ink { touch-action: none; }
+</style>
+</head>
+<body>
+<header>
+  <button id="prev-lesson" aria-label="Previous lesson">‹</button>
+  <div class="titles"><h1 id="lesson-title"></h1><div id="lesson-subtitle"></div></div>
+  <button id="undo">Undo</button>
+  <button id="clear">Clear</button>
+  <label class="toggle"><input type="checkbox" id="finger"> Finger</label>
+  <button id="next-lesson" aria-label="Next lesson">›</button>
+</header>
+<main><div id="page"><canvas id="ruling"></canvas><canvas id="ink"></canvas></div></main>
+<script src="elements.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
