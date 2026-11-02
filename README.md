@@ -1,5 +1,7 @@
 # Ukrainian Handwriting Practice
 
+**Use it here: <https://hazymat.github.io/ukrainian-handwriting-practice/>**
+
 A browser-only copybook (прописи) for learning Ukrainian cursive, designed for iPad + Apple Pencil.
 
 - Slanted ruling (65°) with dashed, x-height and baseline lines, like a Ukrainian school copybook
